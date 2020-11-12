@@ -3,4 +3,10 @@
     <string name="app_name">Aufgabe 4</string>
     <string name="last_login">Letzter Login: %s</string>
     <string name="welcome_user">Willkommen zurück %s!</string>
+    <string name="menu_search_title">Suche</string>
+    <string name="menu_search_tooltip">Suche einen Film in der Liste.</string>
+    <string name="menu_search_toast">Die Suchfunktion wird in naher Zukunft verfügbar sein.</string>
+    <string name="menu_account_title">Konto</string>
+    <string name="menu_account_tooltip">Kontodaten verwalten</string>
+    <string name="menu_account_toast">Kontodaten können noch nicht verwaltet werden.</string>
 </resources>

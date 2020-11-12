@@ -1,11 +1,15 @@
 package com.example.stippejan.aufgabe4;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -41,6 +45,27 @@ public class MainActivity extends AppCompatActivity {
         MovieAdapter movieAdapter = new MovieAdapter(currentUser.getMovieList());
         movieRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         movieRecyclerView.setAdapter(movieAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mainMenuSearch:
+                Toast.makeText(this, getString(R.string.menu_search_toast), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mainMenuUser:
+                Toast.makeText(this, getString(R.string.menu_account_toast), Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
     private String readJsonFile() {

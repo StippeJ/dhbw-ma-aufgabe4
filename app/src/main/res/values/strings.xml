@@ -2,4 +2,10 @@
     <string name="app_name">Assignment 4</string>
     <string name="last_login">Last Login: %s</string>
     <string name="welcome_user">Welcome back %s!</string>
+    <string name="menu_search_title">Search</string>
+    <string name="menu_search_tooltip">Search for a movie in the list.</string>
+    <string name="menu_search_toast">Search will be available in the near future.</string>
+    <string name="menu_account_title">Account</string>
+    <string name="menu_account_tooltip">Manage account information</string>
+    <string name="menu_account_toast">Managing your account information will be available in the future.</string>
 </resources>
