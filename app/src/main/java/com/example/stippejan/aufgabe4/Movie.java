@@ -60,7 +60,7 @@ public class Movie {
         this.imdbScore = imdbScore;
     }
 
-    public boolean isAudioSynchronized() {
+    public boolean getAudioSynchronized() {
         return audioSynchronized;
     }
 

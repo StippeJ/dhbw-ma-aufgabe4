@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Stippe Jan Aufgabe 4</string>
+    <string name="app_name">Assignment 4</string>
+    <string name="last_login">Last Login: %s</string>
+    <string name="welcome_user">Welcome back %s!</string>
 </resources>
