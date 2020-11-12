@@ -13,12 +13,15 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
-    public List<Movie> movieList;
+    // Data of this list will be shown in the RecyclerView
+    private final List<Movie> movieList;
 
+    // Constructor
     public MovieAdapter(List<Movie> movieList) {
         this.movieList = movieList;
     }
 
+    // Inflating the item-layout and creating a ViewHolder
     @NonNull
     @Override
     public MovieAdapter.MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -26,6 +29,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return new MovieViewHolder(v);
     }
 
+    // Setting the content for all Views of each item
     @Override
     public void onBindViewHolder(@NonNull MovieAdapter.MovieViewHolder holder, int position) {
         Movie m = movieList.get(position);
@@ -40,6 +44,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         }
     }
 
+    // Get the Size of the list
     @Override
     public int getItemCount() {
         return movieList.size();
@@ -47,12 +52,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
 
+        // The different Views of an item in the list
         public TextView title;
         public TextView rating;
         public TextView yearDuration;
         public TextView cast;
         public ImageView audioSynchronized;
 
+        // Get references to all Views of an item
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
 

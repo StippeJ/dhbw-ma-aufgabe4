@@ -6,6 +6,7 @@ import java.util.List;
 
 public class User {
 
+    // Properties for a User-object
     @SerializedName("user")
     private String userName;
     @SerializedName("lastLogin")
@@ -13,12 +14,14 @@ public class User {
     @SerializedName("movies")
     private List<Movie> movieList;
 
+    // Constructor
     public User(String userName, String lastLogin, List<Movie> movieList) {
         this.userName = userName;
         this.lastLogin = lastLogin;
         this.movieList = movieList;
     }
 
+    // Getter- and Setter-methods
     public String getUserName() {
         return userName;
     }

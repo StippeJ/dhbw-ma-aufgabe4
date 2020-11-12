@@ -21,8 +21,10 @@ import java.nio.charset.StandardCharsets;
 
 public class MainActivity extends AppCompatActivity {
 
+    // User-object that includes the data that will be shown by this activity
     public User currentUser;
 
+    // Loading the JSON-file and saving its data in the currentUser-object
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         currentUser = createUser(readJsonFile());
     }
 
+    // Load the data into the activities layout
+    // Setting the text for the TextViews
+    // Initialising the RecyclerView
     @Override
     protected void onStart() {
         super.onStart();
@@ -47,12 +52,14 @@ public class MainActivity extends AppCompatActivity {
         movieRecyclerView.setAdapter(movieAdapter);
     }
 
+    // Creating the options-menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+    // Specifying the actions for the menu-icons
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // Read the json-file and return the content as a string
     private String readJsonFile() {
         InputStream is = getResources().openRawResource(R.raw.movies);
         String jsonText = "";
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         return jsonText;
     }
 
+    // Create a user from a string that contains json-data
     private User createUser(String jsonText) {
         Gson gson = new Gson();
         return gson.fromJson(jsonText, User.class);

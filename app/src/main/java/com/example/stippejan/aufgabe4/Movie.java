@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Movie {
 
+    // Properties of the Movie-class
     @SerializedName("title")
     private String title;
     @SerializedName("year")
@@ -19,6 +20,7 @@ public class Movie {
     @SerializedName("cast")
     private List<String> cast;
 
+    // Constructor
     public Movie(String title, int year, int duration, double imdbScore, boolean audioSynchronized, List<String> cast) {
         this.title = title;
         this.year = year;
@@ -28,6 +30,7 @@ public class Movie {
         this.cast = cast;
     }
 
+    // Getter and Setter-methods
     public String getTitle() {
         return title;
     }
