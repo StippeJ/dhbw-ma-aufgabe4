@@ -1,5 +1,6 @@
 package com.example.stippejan.aufgabe4;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.title.setText(m.getTitle());
         holder.rating.setText(String.format("%.1f", m.getImdbScore()));
         holder.yearDuration.setText(m.getYear() + ", " + m.getDuration());
-        holder.cast.setText(m.getCast().toString().replace("[", "").replace("]", ""));
+        holder.cast.setText(TextUtils.join(", ", m.getCast()));
         if (m.getAudioSynchronized()) {
             holder.audioSynchronized.setImageResource(R.drawable.ic_synchronized);
         } else {
